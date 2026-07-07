@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #d1d5db;
+    overflow-x: hidden;
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+  html[dir="rtl"] body {
+    font-family: 'Vazirmatn', sans-serif;
+  }
+  html[dir="ltr"] body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Glass utility */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(6, 182, 212, 0.4); /* فیروزه‌ای */
+  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
+}
+/* ========== قاب شیشه‌ای با حاشیهٔ چرخان ========== */
+.glow-border {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4);
+  filter: blur(8px);
+  opacity: 0.5;
+  animation: rotate-border 12s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate-border {
+  to {
+    transform: rotate(360deg);
+  }
+}

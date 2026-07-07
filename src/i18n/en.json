@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "portfolio_dev": "Dev Projects",
+    "portfolio_video": "Video Editing",
+    "contact": "Contact"
+  },
+  "language": {
+    "fa": "فارسی",
+    "en": "English"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Mohammad Shakeri",
+    "title": "Creative Front-End Developer & Motion Designer",
+    "subtitle": "I create immersive digital experiences by combining modern web development with cinematic motion design. Focused on performance, precision, and visual storytelling.",
+    "cta_work": "View My Work",
+    "cta_contact": "Get In Touch",
+    "cta_video": "Motion Graphics"
+  },
+  "about": {
+    "title": "About Me",
+    "content": "I'm a creative developer passionate about building products that are both visually compelling and technically refined. My background in motion design and video editing allows me to approach digital experiences with a strong sense of storytelling, while my front-end development skills help transform ideas into fast, responsive, and intuitive interfaces. I believe great design isn't just about appearance—it's about creating experiences people remember."
+  },
+  "skills": {
+    "title": "Skills",
+    "video": "Video & Motion",
+    "dev": "Development",
+    "items_video": [
+      "After Effects",
+      "Premiere Pro",
+      "Motion Graphics",
+      "Video Editing",
+      "Color Grading"
+    ],
+    "items_dev": [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML/CSS",
+      "Git"
+    ]
+  },
+  "portfolio_video": {
+    "title": "Video Editing & Motion Graphics",
+    "play": "Play"
+  },
+  "portfolio_dev": {
+    "title": "Web Development Projects",
+    "live_demo": "Live Demo",
+    "coming_soon": "Coming Soon"
+  },
+"contact": {
+  "title": "Contact",
+  "email": "Email",
+  "telegram": "Telegram",
+  "instagram": "Instagram",
+  "form_name": "Name",
+  "form_email": "Email",
+  "form_message": "Message",
+  "form_send": "Send Message",
+  "form_sending": "Sending...",
+  "error_name": "Please enter your name",
+  "error_email": "Please enter your email",
+  "error_email_invalid": "Invalid email address",
+  "error_message": "Please write your message",
+  "success": "Message sent successfully",
+  "copied": "Copied"
+},
+"categories": {
+  "all": "All",
+  "motion-ads": "Motion & Ads",
+  "instagram": "Instagram",
+  "youtube": "YouTube",
+  "blender": "Blender"
+},
+    "what_i_do": {
+    "title": "What I Do",
+    "dev_title": "Front-End Development",
+    "dev_desc": "Building modern, responsive, and fast websites with React & Tailwind. Turning ideas into clean code.",
+    "video_title": "Video Editing & Motion",
+    "video_desc": "Telling visual stories with After Effects & Premiere. Professional editing, color grading, and motion graphics."
+  },
+  "separator": {
+    "text": "✦ Featured Projects ✦"
+  },
+  "footer": {
+    "copyright": "© 2025 Mohammad Shakeri. All rights reserved.",
+    "download_cv": "Download CV"
+  },
+  "videoPage": {
+    "subtitle": "A selection of motion graphics and video editing projects crafted with attention to detail, cinematic pacing, and purposeful storytelling."
+  }
+}

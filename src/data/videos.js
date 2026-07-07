@@ -1,0 +1,68 @@
+const videos = [
+  {
+    id: 1,
+    title: 'تیزر تبلیغاتی صرافی LBank',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/fixed.png',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/fixed_everything.mp4',
+    description: 'یک تیزر کوتاه با موشن‌گرافیک و افکت‌های نرم.',
+    category: 'motion-ads',
+  },
+  {
+    id: 2,
+    title:  'موشن گرافی مسابقات بازی Pes',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/football.png',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/zarbdar_tournament_fc25.mp4',
+    description: 'مسابقات گیم نت ضربدر همدان',
+    category: 'motion-ads',
+  },
+  {
+    id: 3,
+    title:  'ارز همستر',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/hm2.jpg',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/news_exp.mp4',
+    description: 'همستر پول میده؟',
+    category: 'instagram',
+  },
+  {
+    id: 4,
+    title: 'تاثیر اخبار در ترید',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/hm.jpg',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/hm.mp4',
+    description: '',
+    category: 'تاثیر اخبار در ترید',
+  },
+  {
+    id: 5,
+    title: 'نمونه ویدیو یوتیوب + (همکاری با آقای قاضی)',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/yt1.jpg',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/yt1.mp4',
+    description: 'هتل ریونیونگ کره شمالی',
+    category: 'youtube',
+  },
+  {
+    id: 6,
+    title: 'نمونه ویدیو یوتیوب دوم + (همکاری با آقای قاضی)',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/yt2.jpg',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/yt2.mp4',
+    description: 'قطار نازی ها',
+    category: 'youtube',
+  },
+  {
+    id: 7,
+    title: 'انیمیشن سه‌بعدی',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/car.png',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/car_side_animation.mp4',
+    description: 'یک انیمیشن کوتاه ساخته‌شده در بلندر.',
+    category: 'blender',
+  },
+    {
+    id: 8,
+    title: 'موشن گرافی هنرستان بور بور',
+    thumbnail: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/boor.png',
+    videoUrl: 'https://h4.linklick.ir/e26bdb6eca46db3e7a7f22a25d83284c/boorboor_motiongraphic1.mp4',
+    description: '',
+    category: 'motion-ads',
+  },
+]
+
+export default videos
