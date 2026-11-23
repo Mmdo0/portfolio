@@ -1,64 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { ExternalLink, Dice6 } from 'lucide-react'
 import projects from '../data/projects'
-
-function ProjectCard({ project, index, gameMode = false }) {
-  const { t } = useTranslation()
-  if (!project) return null
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-30px' }}
-      transition={{ type: 'spring', stiffness: 100, delay: index * 0.04 }}
-      whileHover={{ scale: 1.02 }}
-      className={`relative rounded-xl p-6 transition-all duration-300 group overflow-hidden ${
-        gameMode
-          ? 'pt-16 border-2 border-amber-400/40 bg-gradient-to-br from-amber-400/10 via-dark/80 to-dark shadow-[0_0_20px_rgba(251,191,36,0.15)]'
-          : 'glass border border-white/5 hover:border-secondary/40'
-      }`}
-    >
-      {gameMode && (
-        <motion.div
-          className="absolute top-3 left-3"
-          animate={{ rotateY: [0, 12, 0, -12, 0] }}
-          transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-          style={{ transformStyle: 'preserve-3d', perspective: 200 }}
-        >
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400/20 to-amber-400/5 backdrop-blur-sm border border-amber-400/30 flex items-center justify-center shadow-[0_6px_12px_-3px_rgba(251,191,36,0.25)]">
-            <Dice6 size={24} className="text-amber-400" />
-          </div>
-        </motion.div>
-      )}
-
-      {/* محتوای اصلی (همانند کارت‌های معمولی) */}
-      <div className="relative z-10">
-        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-secondary transition-colors">
-          {project.title}
-        </h3>
-        <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-5">
-          {project.tech?.map((tech) => (
-            <span key={tech} className="text-xs px-2.5 py-0.5 bg-white/5 rounded-full text-gray-300 border border-white/5">
-              {tech}
-            </span>
-          ))}
-        </div>
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-secondary hover:underline text-sm font-medium"
-        >
-          {t('portfolio_dev.live_demo')}
-          <ExternalLink size={14} />
-        </a>
-      </div>
-    </motion.div>
-  )
-}
+import ProjectCard from './ProjectCard'
 
 const dummyProjects = [
   {
@@ -76,7 +19,8 @@ const dummyProjects = [
 ]
 
 export default function PortfolioDev() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language?.startsWith('fa') ? 'fa' : 'en'
 
   return (
     <section id="dev" className="py-4">
@@ -91,15 +35,28 @@ export default function PortfolioDev() {
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-              gameMode={project.id === 1}
-            />
-          ))}
+          {/* پروژه‌های واقعی */}
+          {projects.map((project, index) => {
+            const localizedProject = {
+              ...project,
+              title: typeof project.title === 'object' ? project.title[lang] : project.title,
+              description:
+                typeof project.description === 'object'
+                  ? project.description[lang]
+                  : project.description,
+            }
 
+            return (
+              <ProjectCard
+                key={project.id}
+                project={localizedProject}
+                index={index}
+                gameMode={Boolean(project.isGame)}
+              />
+            )
+          })}
+
+          {/* کارت‌های «به‌زودی» */}
           {dummyProjects.map((dummy, idx) => (
             <motion.div
               key={dummy.id}
@@ -114,7 +71,10 @@ export default function PortfolioDev() {
                 <p className="text-gray-400 text-sm mb-4">{dummy.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {dummy.tech.map((tech) => (
-                    <span key={tech} className="text-xs px-2.5 py-0.5 bg-white/5 rounded-full text-gray-300">
+                    <span
+                      key={tech}
+                      className="text-xs px-2.5 py-0.5 bg-white/5 rounded-full text-gray-300"
+                    >
                       {tech}
                     </span>
                   ))}
