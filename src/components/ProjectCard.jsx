@@ -19,7 +19,8 @@ const dummyProjects = [
 ]
 
 export default function PortfolioDev() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language?.startsWith('fa') ? 'fa' : 'en'
 
   return (
     <section id="dev" className="py-4">
@@ -34,15 +35,26 @@ export default function PortfolioDev() {
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* پروژه واقعی (مونوپولی) */}
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-              gameMode={project.id === 1}
-            />
-          ))}
+          {/* پروژه‌های واقعی */}
+          {projects.map((project, index) => {
+            const localizedProject = {
+              ...project,
+              title: typeof project.title === 'object' ? project.title[lang] : project.title,
+              description:
+                typeof project.description === 'object'
+                  ? project.description[lang]
+                  : project.description,
+            }
+
+            return (
+              <ProjectCard
+                key={project.id}
+                project={localizedProject}
+                index={index}
+                gameMode={Boolean(project.isGame)}
+              />
+            )
+          })}
 
           {/* کارت‌های «به‌زودی» */}
           {dummyProjects.map((dummy, idx) => (
